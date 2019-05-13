@@ -10,7 +10,7 @@
     <div class="table-responsive">
       <table class="table">
         <tbody>
-        <tr>
+        <tr *ngFor="let iten of items()">
           <th style="width:60%">Cerveja:</th>
 
           <td class="text-right">R$ 6,00</td>
@@ -22,14 +22,9 @@
           <td class="text-right">R$ 22,00</td>
         </tr>
         <tr>
-          <th>Frete:</th>
-
-          <td class="text-right">R$ 8,00</td>
-        </tr>
-        <tr>
           <th>Total:</th>
 
-          <td class="text-right">R$ 80,90</td>
+          <td class="text-right">{{  total() | currency:'BRL': true }}</td>
         </tr>
         </tbody></table>
     </div>
