@@ -1,3 +1,10 @@
-<p>
-  menu-item works!
-</p>
+<div class="menu-item-info-box">
+  <span class="menu-item-info-box-icon"><img [src]="menuItemModel?.imagePath"></span>
+  <div class="menu-item-info-box-content">
+    <span class="menu-item-info-box-text">{{ menuItemModel?.name }}</span>
+    <span class="menu-item-info-box-detail">{{ menuItemModel?.descripton }}</span>
+    <span class="menu-item-info-box-price">{{ menuItemModel?.price | currency: 'BRL': true}}</span>
+    <a class="" (click)="emitAddEvent()"><i class="fa fa-plus-circle"></i> Adicionar</a>
+  </div>
+  <!-- /.info-box-content -->
+</div>
