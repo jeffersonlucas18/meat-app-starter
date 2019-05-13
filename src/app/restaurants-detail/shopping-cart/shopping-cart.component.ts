@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'mt-shopping-cart',
-  templateUrl: './shopping-cart.component.html',
-  styleUrls: ['./shopping-cart.component.css']
+  templateUrl: './shopping-cart.component.html'
 })
 export class ShoppingCartComponent implements OnInit {
 

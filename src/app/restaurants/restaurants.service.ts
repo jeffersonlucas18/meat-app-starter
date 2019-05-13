@@ -12,15 +12,17 @@ export class RestaurantsService {
 
   constructor(private http: Http) { }
 
-  //restaurants(): Observable<RestaurantModel[]> {
-    //return this.http.get(`${MEAT_API}/restaurants`)
-      //.map(response => response.json())
-      //.catch(ErrorHandle.handleError);
-  //}
-
-    restaurants(): Observable<RestaurantModel[]>{
-      return this.http.get(`${MEAT_API}/restaurants`)
+  obterRestaurants(): Observable<RestaurantModel[]> {
+    return this.http.get(`${MEAT_API}/restaurants`)
       .map(response => response.json())
-      .catch(ErrorHandle.handleError)
-    }
+      .catch(ErrorHandle.handleError);
+  }
+
+  obterRestaurantById(id: string): Observable<RestaurantModel> {
+  return this.http.get(`${MEAT_API}/restaurants/${id}`)
+    .map(response => response.json())
+    .catch(ErrorHandle.handleError);
+  }
+
+
 }

@@ -1,10 +1,10 @@
 export interface RestaurantModel {
 
   id: string;
-  nome: string;
+  name: string;
   category: string;
   deliveryEstimate: string;
   rating: number;
   imagePath: string;
-
+  about: string;
 }
