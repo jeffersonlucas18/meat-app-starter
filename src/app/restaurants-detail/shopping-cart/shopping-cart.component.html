@@ -2,7 +2,7 @@
 <div class="box box-solid">
   <div class="box-header">
     <i class="fa fa-shopping-cart"></i>
-   
+
     <div *ngIf="!items().length">
       <p class="text-center">Seu carrinho ta vazio</p>
     </div>
@@ -14,24 +14,25 @@
     <div class="table-responsive" *ngIf=" items().length">
       <table class="table">
         <tbody>
-        <tr *ngFor="let item of items()">
-          <th>({{ item.quantity }} x) {{ item.menuItem.name }}</th>
-          <td class="text-right">{{ item.value() | currency: 'BRL': true}} </td>
-          <td class="text-right">
-          <a class="btn btn-sm danger" (click)="removeItem(item)">
-            <i class="fa fa-remove"></i>
-          </a>
-          </td>
-        </tr>
-        <tr>
-          <th>Total:</th>
+          <tr *ngFor="let item of items()">
+            <th>({{ item.quantity }} x) {{ item.menuItem.name }}</th>
+            <td class="text-right">{{ item.value() | currency: 'BRL': true}} </td>
+            <td class="text-right">
+              <a class="btn btn-sm danger" (click)="removeItem(item)">
+                <i class="fa fa-remove"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <th>Total:</th>
 
-          <td class="text-right">{{  total() | currency:'BRL': true }}</td>
-        </tr>
-        </tbody></table>
+            <td class="text-right">{{  total() | currency:'BRL': true }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-  <div class="box-footer"  *ngIf=" items().length">
+  <div class="box-footer" *ngIf=" items().length">
     <div class="pull-right">
       <button type="button" (click)="clear()" class="btn btn-danger"><i class="fa fa-trash"></i> Limpar</button>
       <a [routerLink]="['/order']" class="btn btn-success"><i class="fa fa-credit-card"></i> Fechar Pedido</a>
