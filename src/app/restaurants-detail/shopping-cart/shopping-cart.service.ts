@@ -1,7 +1,8 @@
-import {CartItemModel} from './cart-item.model';
-import {MenuItemModel} from '../menu-item/menu-item.model';
+import { CartItemModel } from './cart-item.model';
+import { MenuItemModel } from '../menu-item/menu-item.model';
 
 export class ShoppingCartService {
+
   itens: CartItemModel[] = [];
 
 
@@ -10,16 +11,16 @@ export class ShoppingCartService {
   }
 
   botalAddItem(item: MenuItemModel) {
-  let foundItem = this.itens.find((mItem) => mItem.menuItem.id === item.id);
+    let foundItem = this.itens.find((mItem) => mItem.menuItem.id === item.id);
 
-  if (foundItem) {
-    foundItem.quantity = foundItem.quantity + 1;
-  } else {
-    this.itens.push(new CartItemModel(item));
+    if (foundItem) {
+      foundItem.quantity = foundItem.quantity + 1;
+    } else {
+      this.itens.push(new CartItemModel(item));
     }
   }
 
-  removeItem( item: CartItemModel) {
+  removeItem(item: CartItemModel) {
     this.itens.splice(this.itens.indexOf(item), 1);
   }
 
