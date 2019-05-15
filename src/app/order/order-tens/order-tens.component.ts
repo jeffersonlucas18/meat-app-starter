@@ -7,7 +7,7 @@ import {CartItemModel} from '../../restaurants-detail/shopping-cart/cart-item.mo
 })
 export class OrderTensComponent implements OnInit {
 
-  @Input() itens:CartItemModel[];
+  @Input() itens: CartItemModel[];
 
   @Output() increaseqTY = new EventEmitter<CartItemModel>();
   @Output() desincreaseqTY = new EventEmitter<CartItemModel>();
