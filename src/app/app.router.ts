@@ -6,6 +6,7 @@ import {RestaurantsDetailComponent} from './restaurants-detail/restaurants-detai
 import {MenuComponent} from './restaurants-detail/menu/menu.component';
 import {ReviewsComponent} from './restaurants-detail/reviews/reviews.component';
 import {OrderComponent} from './order/order.component';
+import {OrderSummaryComponent} from './order-summary/order-summary.component';
 
 
 export const ROUTES: Routes = [
@@ -18,6 +19,7 @@ export const ROUTES: Routes = [
       {path: 'menu', component: MenuComponent},
       {path: 'reviews', component: ReviewsComponent}
     ]},
+  {path: 'finalizar', component: OrderSummaryComponent},
   {path: 'order', component: OrderComponent}
 ];
 

@@ -24,7 +24,7 @@ export class ShoppingCartService {
     this.itens.splice(this.itens.indexOf(item), 1);
   }
 
-  total(): number {
+    total(): number {
     return this.itens.map(itens => itens.value()).reduce((prev, value) => prev + value, 0);
   }
 

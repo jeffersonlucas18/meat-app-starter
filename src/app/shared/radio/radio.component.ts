@@ -19,8 +19,8 @@ export class RadioComponent implements OnInit, ControlValueAccessor {
   @Input() opcoes: RadioModel[] = [];
 
   value: any;
-
   onChange: any
+
   ngOnInit() {
   }
 
