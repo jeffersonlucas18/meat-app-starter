@@ -5,8 +5,6 @@ import { RouterModule } from '@angular/router';
 import  {ROUTES} from './app.router';
 import {FormsModule, NgModel} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
-
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -21,15 +19,10 @@ import { MenuItemComponent } from './restaurants-detail/menu-item/menu-item.comp
 import { ReviewsComponent } from './restaurants-detail/reviews/reviews.component';
 import {ShoppingCartService} from './restaurants-detail/shopping-cart/shopping-cart.service';
 
-import { OrderComponent } from './order/order.component';
-import { InputComponent } from './shared/input/input.component';
-import { RadioComponent } from './shared/radio/radio.component';
-import { OrderTensComponent } from './order/order-tens/order-tens.component';
 import {OrderService} from './order/order.service';
-import { DeliveryCostsComponent } from './order/delivery-costs/delivery-costs.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
-import { RatingComponent } from './shared/rating/rating.component';
 import { SnackbarComponent } from './shared/messagem/snackbar/snackbar.component';
+import {SharedModule} from './shared/shared.module';
 ;
 
 
@@ -46,13 +39,7 @@ import { SnackbarComponent } from './shared/messagem/snackbar/snackbar.component
     ShoppingCartComponent,
     MenuItemComponent,
     ReviewsComponent,
-    OrderComponent,
-    InputComponent,
-    RadioComponent,
-    OrderTensComponent,
-    DeliveryCostsComponent,
     OrderSummaryComponent,
-    RatingComponent,
     SnackbarComponent
   ],
   imports: [
@@ -61,7 +48,7 @@ import { SnackbarComponent } from './shared/messagem/snackbar/snackbar.component
     RouterModule.forRoot(ROUTES),
     FormsModule,
     ReactiveFormsModule,
-
+    SharedModule
   ],
   providers: [RestaurantsService, ShoppingCartService, NgModel, OrderService, {provide: LOCALE_ID, useValue: 'pt-BR'} ],
   bootstrap: [AppComponent]
