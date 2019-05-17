@@ -6,10 +6,10 @@ import  {ROUTES} from './app.router';
 import {FormsModule, NgModel} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 
@@ -29,6 +29,8 @@ import {OrderService} from './order/order.service';
 import { DeliveryCostsComponent } from './order/delivery-costs/delivery-costs.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { RatingComponent } from './shared/rating/rating.component';
+import { SnackbarComponent } from './shared/messagem/snackbar/snackbar.component';
+;
 
 
 
@@ -37,7 +39,6 @@ import { RatingComponent } from './shared/rating/rating.component';
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    AboutComponent,
     RestaurantsComponent,
     RestaurantComponent,
     RestaurantsDetailComponent,
@@ -51,14 +52,16 @@ import { RatingComponent } from './shared/rating/rating.component';
     OrderTensComponent,
     DeliveryCostsComponent,
     OrderSummaryComponent,
-    RatingComponent
+    RatingComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(ROUTES),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [RestaurantsService, ShoppingCartService, NgModel, OrderService, {provide: LOCALE_ID, useValue: 'pt-BR'} ],
   bootstrap: [AppComponent]

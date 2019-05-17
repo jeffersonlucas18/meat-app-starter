@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
+import {Component, group, OnInit} from '@angular/core';
+import {FormGroup, FormBuilder, FormControl, Validators, AbstractControl} from '@angular/forms';
 import {RadioModel} from '../shared/radio/radio.model';
 import {OrderService} from './order.service';
 import {CartItemModel} from '../restaurants-detail/shopping-cart/cart-item.model';
@@ -25,8 +25,7 @@ export class OrderComponent implements OnInit {
     {label: 'Cartão Refeição', value: 'REF'}
   ];
    delivery: number= 8;
-   emailPattern = /^(([^<>()\\[\\]\\.,;:\\s@\\"]+(\\.[^<>()\\[\\]\\.,;:\\s@\\"]+)*)|(\\".+\\"))@(([^<>()[\\]\\.,;:\\s@\\"]+\\.)+[^<>()[\\]\\.,;:\\s@\\"]{2,})$/i;
-
+   emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
     number = /^[0-9]*$/;
   constructor(private orderService: OrderService,
               private cartService: ShoppingCartService,
@@ -40,13 +39,23 @@ export class OrderComponent implements OnInit {
       this.compraForm = this.fB.group({
       nome: new FormControl ('',[Validators.maxLength(60), Validators.required, Validators.minLength(5)]),
       email: new FormControl ('', [Validators.pattern(this.emailPattern), Validators.required]),
-      confirmacao: new FormControl ('',[Validators.pattern(this.emailPattern), Validators.required]),
+        confirmacao: new FormControl ('',[Validators.pattern(this.emailPattern), Validators.required]),
       opcoesDePagamentos: new FormControl ('', ),
         endereco: new FormControl ('',[Validators.maxLength(60), Validators.required, Validators.minLength(5)]),
         numero: new FormControl ('', [Validators.required, Validators.pattern(this.number)]),
        complemento: new FormControl('')
-      });
+      }, {validator: OrderComponent.igual});
+
     }
+   static igual(group: AbstractControl):{[key: string]: boolean}{
+      const email = group.get('email');
+      const confirmacaoEmail = group.get('confirmacao');
+      if (!email || !confirmacaoEmail) {
+        return undefined ;
+      }if ( email.value !== confirmacaoEmail.value){
+        return {Emailnaoencontrado: true};
+     }
+  }
 
     itensValue(): number {
       return this.orderService.itensValue();
