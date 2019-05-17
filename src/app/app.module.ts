@@ -45,7 +45,7 @@ import {SharedModule} from './shared/shared.module';
   imports: [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules} ),
+    RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
     FormsModule,
     ReactiveFormsModule,
     SharedModule.forRoot(),

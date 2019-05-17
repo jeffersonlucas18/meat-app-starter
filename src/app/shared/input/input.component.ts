@@ -1,5 +1,5 @@
-import {Component, ContentChild, Input, OnInit, AfterContentInit} from '@angular/core';
-import {NgModel, FormControlName} from '@angular/forms';
+import { Component, ContentChild, Input, OnInit, AfterContentInit } from '@angular/core';
+import { NgModel, FormControlName } from '@angular/forms';
 
 @Component({
   selector: 'mt-input-container',
@@ -29,11 +29,11 @@ export class InputComponent implements OnInit, AfterContentInit {
   }
 
   hasSuccess(): boolean {
-  return this.input.valid && (this.input.dirty || this.input.touched);
+    return this.input.valid && (this.input.dirty || this.input.touched);
   }
 
   hasError(): boolean {
-  return this.input.invalid && (this.input.dirty || this.input.touched);
+    return this.input.invalid && (this.input.dirty || this.input.touched);
   }
 }
 
