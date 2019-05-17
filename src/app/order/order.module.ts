@@ -15,4 +15,4 @@ const ROUTES: Routes =  [
   exports: [OrderComponent, DeliveryCostsComponent, OrderTensComponent, SharedModule]
 })
 
-export class OrderModule{}
+export class OrderModule {}
