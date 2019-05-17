@@ -21,9 +21,9 @@ import { ReviewsComponent } from './restaurants-detail/reviews/reviews.component
 
 
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
-import { SnackbarComponent } from './shared/messagem/snackbar/snackbar.component';
+
 import {SharedModule} from './shared/shared.module';
-import {CoreModule} from './shared/core/core.module';
+
 
 
 
@@ -40,8 +40,7 @@ import {CoreModule} from './shared/core/core.module';
     ShoppingCartComponent,
     MenuItemComponent,
     ReviewsComponent,
-    OrderSummaryComponent,
-    SnackbarComponent
+    OrderSummaryComponent
   ],
   imports: [
     BrowserModule,

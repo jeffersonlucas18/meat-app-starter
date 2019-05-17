@@ -8,14 +8,15 @@ import {CommonModule} from '@angular/common';
 import {ShoppingCartService} from '../restaurants-detail/shopping-cart/shopping-cart.service';
 import {RestaurantsService} from '../restaurants/restaurants.service';
 import {OrderService} from '../order/order.service';
+import {SnackbarComponent} from './messagem/snackbar/snackbar.component';
 
 @NgModule({
-  declarations: [InputComponent, RadioComponent, RatingComponent],
+  declarations: [InputComponent, RadioComponent, RatingComponent, SnackbarComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,
     CommonModule],
-  exports: [InputComponent, RadioComponent, RatingComponent,
+  exports: [InputComponent, RadioComponent, RatingComponent, SnackbarComponent,
     FormsModule,
     ReactiveFormsModule,
     CommonModule]
