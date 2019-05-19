@@ -15,7 +15,10 @@ export class RestaurantsDetailComponent implements OnInit {
   restaurant: RestaurantModel;
 
   ngOnInit() {
-  this.restaurantsService.obterRestaurantById(this.route.snapshot.params['id'])
+    this.pegaidRestarurant();
+  }
+  pegaidRestarurant(){
+    this.restaurantsService.obterRestaurantById(this.route.snapshot.params['id'])
     .subscribe(restaurant => this.restaurant = restaurant);
   }
 

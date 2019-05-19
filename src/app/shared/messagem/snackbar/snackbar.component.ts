@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {trigger, state, style, transition, animate} from '@angular/animation';
+import {trigger, state, style, transition, animate} from '@angular/animations';
 @Component({
   selector: 'mt-snackbar',
   templateUrl: './snackbar.component.html',
