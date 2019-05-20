@@ -1,17 +1,32 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {RestaurantModel} from './restaurant.model';
+import {style, animate, trigger, state, transition} from '@angular/animation';
+
 
 @Component({
   selector: 'mt-restaurant',
-  templateUrl: './restaurant.component.html'
+  templateUrl: './restaurant.component.html',
+  animations: [
+    trigger('RestaurantAparecer', [
+      state('ready', style({opacity: 1})),
+      transition('void => ready',
+        [style({opacity: 0,  transform: 'translate(-30px, -10px)'}),
+        animate('500ms 0s ease-in-out')
+      ])
+    ])
+  ]
 })
+
 export class RestaurantComponent implements OnInit {
 
-@Input() restaurant: RestaurantModel;
+  restaurantState = 'ready';
+
+  @Input() restaurant: RestaurantModel;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+
+    }
 
 }

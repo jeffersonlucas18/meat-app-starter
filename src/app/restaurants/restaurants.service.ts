@@ -22,15 +22,10 @@ export class RestaurantsService {
   }
 
   obterRestaurantById(id: string): Observable<RestaurantModel> {
-  return this.http.get(`${MEAT_API}/restaurants/${id}`)
-    .map(response => response.json())
-    .catch(ErrorHandle.handleError);
+    return this.http.get(`${MEAT_API}/restaurants/${id}`)
+      .map(response => response.json())
+      .catch(ErrorHandle.handleError);
   }
-  // obterReviewsOfRestaurant(id: string): Observable<any> {
-  // return this.http.get(`${MEAT_API}/restaurants/${id}/reviews`)
-  //   .map(response => response.json())
-  //   .catch(ErrorHandle.handleError);
-  // }
     obterReviewsOfRestaurant(id: string): Observable<any> {
     return this.http.get(`${MEAT_API}/restaurants/${id}/reviews`)
       .map(response => response.json())
