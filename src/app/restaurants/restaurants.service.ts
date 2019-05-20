@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+
 import { RestaurantModel } from '../restaurants/restaurant/restaurant.model';
 import { MEAT_API } from '../app.api';
 import 'rxjs/add/operator/map';
@@ -7,8 +7,10 @@ import { Observable } from 'rxjs';
 import { Http } from '@angular/http';
 import {ErrorHandle} from '../app.errohandle';
 import {MenuItemModel} from '../restaurants-detail/menu-item/menu-item.model';
+import {Injectable} from '@angular/core';
 
 @Injectable()
+
 export class RestaurantsService {
 
   constructor(private http: Http) { }
