@@ -24,6 +24,7 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { SnackbarComponent } from './shared/messagem/snackbar/snackbar.component';
 import {SharedModule} from './shared/shared.module';
 import {CoreModule} from './shared/core/core.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -41,7 +42,8 @@ import {CoreModule} from './shared/core/core.module';
     MenuItemComponent,
     ReviewsComponent,
     OrderSummaryComponent,
-    SnackbarComponent
+    SnackbarComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
