@@ -3,6 +3,7 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule} from '@angular/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import  {ROUTES} from './app.router';
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -54,7 +55,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     SharedModule.forRoot(),
 
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'pt-BR'} ],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, {provide: LOCALE_ID, useValue: 'pt-BR'} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
