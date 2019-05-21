@@ -55,7 +55,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     SharedModule.forRoot(),
 
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, {provide: LOCALE_ID, useValue: 'pt-BR'} ],
+  providers: [   {provide: LOCALE_ID, useValue: 'pt-BR'} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

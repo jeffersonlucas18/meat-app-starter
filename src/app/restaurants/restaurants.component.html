@@ -3,9 +3,20 @@
 <section class="content-header">
   <h1>
     Todos os Restaurantes
+    <a class="search-link pull-right"><i class="fa fa-search houver"></i> </a>
   </h1>
 </section>
 
+<!--Barra de Busca-->
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="searchForm">
+      <div class="form-group">
+        <input type="text" formControlName="searchControl" class="form-control" id="pesquisa" placeholder="O que vc está procurando">
+      </div>
+    </form>
+  </div>
+</div>
 
 <section class="content">
 
@@ -15,7 +26,11 @@
 
     </div>
     <!-- /.col -->
-
+  <div class="col-xs-12" *ngIf="restaurants?.length === 0">
+  <p class="lead text-center">
+    Não foram encontrados itens
+  </p>
+  </div>
 
 
   </div>

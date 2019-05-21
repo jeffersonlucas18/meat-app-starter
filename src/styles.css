@@ -261,3 +261,17 @@ body {
 .has-error-block {
   color: #dd4b39;
 }
+
+/*BARRA DE BUSCA DE RESTAURANT*/
+.search-link{
+  cursor: pointer;
+  color: #555;
+}
+.search-link:houver {
+  color: #dd4b39;
+}
+#pesquisa{
+  /*max-width:70px;*/
+  margin-top: 20px;
+  margin-right: 10px;
+}
