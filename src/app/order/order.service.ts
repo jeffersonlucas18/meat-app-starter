@@ -3,7 +3,7 @@ import {ShoppingCartService} from '../restaurants-detail/shopping-cart/shopping-
 import {CartItemModel} from '../restaurants-detail/shopping-cart/cart-item.model';
 import {OrderModel} from './order.model';
 import {Observable} from 'rxjs';
-import {Http, Headers, RequestOptions} from '@angular/http';
+import {HttpClient} from '@angular/common/http';
 import  'rxjs/add/operator/map';
 import {MEAT_API} from '../app.api';
 
@@ -12,7 +12,7 @@ import {MEAT_API} from '../app.api';
   export class OrderService {
 
   constructor(private cartService: ShoppingCartService,
-             private http: Http) {
+             private http: HttpClient) {
   }
   itensValue(): number {
     return this.cartService.total();
@@ -34,12 +34,7 @@ import {MEAT_API} from '../app.api';
   }
 
   checkCompra(compra: OrderModel): Observable<string> {
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post(`${MEAT_API}/orders`,
-      JSON.stringify(compra),
-      new RequestOptions({headers: headers})).map(response => response.json()).map(compra=> compra.id);
-
+    return this.http.post<OrderModel>(`${MEAT_API}/orders`, compra).map(compra=> compra.id);
   }
 }
 

@@ -18,17 +18,18 @@
 
 
 
-import {Response} from '@angular/http';
+import {HttpErrorResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import 'rxjs/add/observable/throw';
 
 export class ErrorHandle {
 
-  static handleError(error: Response | any) {
+  static handleError(error: HttpErrorResponse | any) {
 
     let errorMessage: string;
-    if (error instanceof Response) {
-        errorMessage = `Erro ${error.status} ao  obter a URL ${error.url} - ${error.statusText}`;
+    if (error instanceof HttpErrorResponse) {
+        const body = error.error
+        errorMessage = `Erro ${error.status} ao  obter a URL ${error.url} - ${error.statusText || ''} ${body}`;
     }else {
       errorMessage = error.toString();
     }
