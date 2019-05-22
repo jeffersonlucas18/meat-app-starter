@@ -28,6 +28,7 @@ export class RestaurantsComponent implements OnInit {
         this.searchForm = this.fb.group({
           searchControl: this.searchControl
         });
+        //Método Pesquisa
         this.searchControl.valueChanges.distinctUntilChanged()
           .debounceTime(500)
           .distinctUntilChanged()

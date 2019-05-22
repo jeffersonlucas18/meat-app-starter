@@ -34,7 +34,7 @@ import {MEAT_API} from '../app.api';
   }
 
   checkCompra(compra: OrderModel): Observable<string> {
-    return this.http.post<OrderModel>(`${MEAT_API}/orders`, compra).map(compra=> compra.id);
+    return this.http.post<OrderModel>(`${MEAT_API}/orders`, compra).map(compra => compra.id);
   }
 }
 
